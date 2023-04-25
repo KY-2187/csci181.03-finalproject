@@ -44,7 +44,7 @@ struct ContentView: View {
             List {
                 Section(header: Text("Season 1")) {
                     ForEach(episodeNames.indices, id: \.self) { index in
-                        NavigationLink(destination: EpisodeInfoView(episode: tvShowResponse?.episodes[index] ?? Episode(air_date: "", episode_number: 0, id: 0, name: "", overview: "", still_path: ""))) {
+                        NavigationLink(destination: EpisodeInfo(episode: tvShowResponse?.episodes[index] ?? Episode(air_date: "", episode_number: 0, id: 0, name: "", overview: "", still_path: ""))) {
                             HStack {
                                 Text("\(index+1). \(episodeNames[index])")
                                 Spacer()
@@ -81,6 +81,7 @@ struct ContentView: View {
     }
     
     func makeAPIcall() {
+        /// the api we used only has You season 1
         let url = URL(string: "https://api.themoviedb.org/3/tv/78191/season/1?api_key=75f7cffa9544a6656df6207faf0fc944&language=en-US")!
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {

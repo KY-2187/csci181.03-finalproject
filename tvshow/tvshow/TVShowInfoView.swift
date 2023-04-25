@@ -2,7 +2,7 @@
 //  TVShowInfoView.swift
 //  tvshow
 //
-//  Created by Caitlin Hung on 4/21/23.
+//  Created by Kyra Hung on 4/21/23.
 //
 
 import SwiftUI
